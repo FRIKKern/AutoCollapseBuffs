@@ -1,7 +1,7 @@
-## Interface: 100007
+## Interface: 110005, 110007
 ## Title: Auto Collapse Buffs
 ## Notes: Automatically collapses the BuffFrame when in combat.
-## Author: YourName
+## Author: Frikk Jarl
 ## Version: 1.0
 
 AutoCollapseBuffs.lua

@@ -3,5 +3,6 @@
 ## Notes: Automatically collapses the BuffFrame when in combat.
 ## Author: Frikk Jarl
 ## Version: 1.0
+## IconTexture: Interface\AddOns\AutoCollapseBuffs\Logo.blp
 
 AutoCollapseBuffs.lua

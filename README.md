@@ -1,9 +1,3 @@
-# Auto Collapse Buffs 🛡️
-
-**Auto Collapse Buffs** enhances your World of Warcraft interface by automatically managing your buff display during combat.
-
-## Features ✨
-
 ### Automatic BuffFrame Management 🔄
 
 - **Collapse Buffs in Combat:** Keeps your screen clear by collapsing the BuffFrame when you enter combat.

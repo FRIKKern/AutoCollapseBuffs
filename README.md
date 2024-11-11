@@ -6,7 +6,7 @@
 
 ### Automatic BuffFrame Management 🔄
 
-- **Collapse Buffs in Combat:** Keeps your screen clear by hiding the BuffFrame when you enter combat.
+- **Collapse Buffs in Combat:** Keeps your screen clear by collapsing the BuffFrame when you enter combat.
 - **Expand Buffs out of Combat:** Restores the BuffFrame when you exit combat, so you can monitor your active buffs.
 
 ### Seamless Integration 🧩

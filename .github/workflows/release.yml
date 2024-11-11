@@ -1,4 +1,4 @@
-name: Create Release
+name: Create Release on Tag
 
 on:
   push:
@@ -13,10 +13,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js (required for zip)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+      - name: Update Version in TOC File
+        run: |
+          sed -i "s/^## Version:.*$/## Version: ${{ github.ref_name }}/" AutoCollapseBuffs.toc
 
       - name: Prepare Release Directory
         run: |
@@ -28,9 +27,7 @@ jobs:
 
       - name: Zip Release Files
         run: |
-          cd AutoCollapseBuffs
-          zip -r ../AutoCollapseBuffs.zip .
-          cd ..
+          zip -r AutoCollapseBuffs.zip AutoCollapseBuffs
 
       - name: Create GitHub Release
         id: create_release

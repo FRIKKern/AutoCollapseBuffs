@@ -31,6 +31,4 @@
 
 - **Author:** Frikk Jarl
 
----
 
-Enjoy a cleaner and smarter interface with **Auto Collapse Buffs**! 🎮

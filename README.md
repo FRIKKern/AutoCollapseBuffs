@@ -22,7 +22,7 @@
 
 ## Compatibility 🖥️
 
-- **Game Versions Supported:** 11.0.0.5
+- **Game Versions Supported:** 11.0.5
 - **No Dependencies:** Fully standalone addon.
 
 ---

@@ -10,36 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js (required for zip creation)
-      - name: Set up Node.js
+      - name: Set up Node.js (required for zip)
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      # Step 3: Prepare Release Directory
       - name: Prepare Release Directory
         run: |
-          # Create the top-level folder based on the tag name
-          mkdir -p "${{ github.ref_name }}/AutoQue"
-          cp AutoQue.lua "${{ github.ref_name }}/AutoQue/"
-          cp AutoQue.toc "${{ github.ref_name }}/AutoQue/"
-          cp embeds.xml "${{ github.ref_name }}/AutoQue/"
-          cp README.md "${{ github.ref_name }}/AutoQue/"
-          cp -r CallbackHandler-1.0 "${{ github.ref_name }}/AutoQue/"
-          cp -r LibDataBroker-1.1 "${{ github.ref_name }}/AutoQue/"
-          cp -r LibDBIcon-1.0 "${{ github.ref_name }}/AutoQue/"
-          cp -r LibStub "${{ github.ref_name }}/AutoQue/"
+          mkdir AutoCollapseBuffs
+          cp AutoCollapseBuffs.lua AutoCollapseBuffs/
+          cp AutoCollapseBuffs.toc AutoCollapseBuffs/
+          cp LICENSE AutoCollapseBuffs/
+          cp Logo.blp AutoCollapseBuffs/
 
-      # Step 4: Zip Release Files
       - name: Zip Release Files
         run: |
-          zip -r "${{ github.ref_name }}.zip" "${{ github.ref_name }}/"
+          cd AutoCollapseBuffs
+          zip -r ../AutoCollapseBuffs.zip .
+          cd ..
 
-      # Step 5: Create GitHub Release
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
@@ -51,13 +43,12 @@ jobs:
           draft: false
           prerelease: false
 
-      # Step 6: Upload Release Asset
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./${{ github.ref_name }}.zip"
-          asset_name: "${{ github.ref_name }}.zip"
+          asset_path: ./AutoCollapseBuffs.zip
+          asset_name: AutoCollapseBuffs.zip
           asset_content_type: application/zip
